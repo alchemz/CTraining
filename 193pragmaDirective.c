@@ -1,14 +1,16 @@
 #include<stdio.>
-#inclue<conio.h>
+#include<conio.h>
 
-void Hello();
+void Hello();//delcare function
 void Bye();
-#pragma startup Hello
-#pragma exit Bye
-
+#pragma startup Hello //execute before main
+#pragma exit Bye //execute after main
+//#pragma warn rvl
+//#pragma warn par
+//#pragma warn rch
 void main()
 {
-delay(1000);
+delay(1000);//execute hello first
 gotoxy(12,14);
 printf("\n Now I am inside main function!");
 getch;
