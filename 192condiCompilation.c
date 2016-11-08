@@ -1,3 +1,9 @@
+/*
+#ifdef
+#ifndef
+#undef
+#endif
+*/
 #include<stdio.h>
 #include<conio.h>
 #define WINDOWS
