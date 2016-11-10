@@ -21,10 +21,19 @@ void main()
 int i=65,j;
 clrscr();
 printf("\n Vlaue of i=%d",i);
+  //use 1 to check first bit
 j=i&1;
 if(j==0)
 printf("\tIt's first bit is off");
 else
 printf("Itis first bit is on");
+  
+/*
+j=1&32;
+if(j==0)
+printf("\tThe fifth bit is off");
+else
+printf("\tThe fifth bit is on");
+*/  
 getch;
 }
