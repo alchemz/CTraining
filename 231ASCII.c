@@ -1,6 +1,10 @@
 #include<stdio.h>
 #include<conio.h>
-
+/*
+ASCII stands for American Standard Code for information interchange
+0-255
+ 
+*/
 void main()
 {
 int i;
