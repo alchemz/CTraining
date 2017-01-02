@@ -59,10 +59,13 @@ BUFFER3=malloc(IMG3);
 getimage(340,340,360,360,BUFFER3);
 putimage(340,340,BUFFER3,XOR_PUT);
 
+  //animate the ball
+  //infinite for loop, empty for loop
 for(;;)
 {
 putimage(x_axis,y_axis,BUFFER3, XOR_PUT);
 delay(speed);
+ //with the delay, the continous ball movement is completed
 putimage(x_axis,y_axis,BUFFER3, XOR_PUT);
 
 x_axis=x_axis+(x_direction*2);
@@ -114,6 +117,8 @@ y_axis=0;
 if(kbhit())
 {
 //free memory occupied by images
+  //if not free the memory, the game will be stuck 
+  //with any keyboard hit, it will terminate the program
 free(BUFFER1);
 free(BUFFER2);
 free(BUFFER3);
