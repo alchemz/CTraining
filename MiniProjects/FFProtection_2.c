@@ -53,7 +53,7 @@ void main()
 	exit(1)； //terminate
 	switch(ch)
 	{
-		case 1:
+		case '1':
 			clrscr();
 			gotoxy(15,6);
 			textcolor(2);
@@ -70,7 +70,7 @@ void main()
 			gets(FN); //file path
 
 			test=_chmod(FN,1,FA_SYSTEM | FA_HIDDEN |FA_RDONLY);
-			if(test==_1)
+			if(test==-1)
 			{
 				clrscr();
 				gotoxy(19,9);
