@@ -1,5 +1,8 @@
 /*
+Artificial Intelligence
 Collision
+
+
 */
 
 
@@ -78,16 +81,23 @@ int X_POSITION=0, Y_POSITION=0;
 
     x_axis=x_axis+(x_direction*2);
     y_axis=y_axis+(y_direction*3);
+   /****The collision detection****/
+   //if the ball is hitting on the wall
     if(x_axis+10-1>640)
     {
     x_direction*=-1;
+      //bounce back
     x_axis=640-10+1;
     }
+     //if the ball is hitting on the wall, set the left limits
     if(x_axis<0)
     {
+      //change the direction
     x_direction*=-1;
     x_axis=0;
     }
+   
+   //the bottom line
     if(y_axis+10-1>470)
     {
     cleardevice();
@@ -97,9 +107,13 @@ int X_POSITION=0, Y_POSITION=0;
     free(BUFFER1);
     free(BUFFER2);
     free(BUFFER3);
-    delay(2000);
-    
+    delay(2000);    
     }
+   
+   /*****Artifical Intelligence******/
+   //as long as the ball hit the brick, it changes the direction
+   //hit the paddle
+   //6 is the paddle color
     if(getpixel(x_axis,y_axis)==6)
     {
     sound(900);
@@ -107,24 +121,21 @@ int X_POSITION=0, Y_POSITION=0;
     nosound();
     y_direction*=-1;
     }
-    if(getpixel(x_axis,y_axis)==9)
-    {
-    sound(300);
-    delay(50);
-    nosound();
-    y_direction*=-1;
-    }
+   //hit the brick
+   //9 is the brick color
   if(getpixel(x_axis,y_axis)==9)
   {
   sound(300);
   delay(50);
   nosound();
   y_direction*=-1;
-  x=x_axis;
+    
+    //when hit on the brick, the brick shows some reaction
+    x=x_axis;//get current x_axis, y_axis
     y=y_axis;
     x=(x/70)*70+8;
     y=(y/30)*30;
-    putimage(x,y,BUFFER1,XOR_PUT);
+    putimage(x,y,BUFFER1,XOR_PUT); //plot a new brick with the same background color
     }
 
     if(y_axis<0)
